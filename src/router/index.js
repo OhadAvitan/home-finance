@@ -1,5 +1,6 @@
 import Home from '@/views/Home.vue'
 import Survey from '@/views/Survey.vue'
+import Congrats from '@/views/Congrats.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -13,10 +14,14 @@ const router = createRouter({
         },
         {   
             path: '/Survey',
-            // path: '/home-finance/Survey',
             name: 'Survey',
             component: Survey
-        }
+        },
+        {   
+            path: '/Congrats',
+            name: 'Congrats',
+            component: Congrats
+        },
     ]
 })
 

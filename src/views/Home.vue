@@ -2,7 +2,11 @@
   <div class="home d-flex align-center flex-column">
     <div class="header-space"></div>
     <div class="hero d-flex flex-column">
-        <a aria-label="Chat on WhatsApp" href="https://wa.me/+972506545074"><img alt="Chat on WhatsApp" src="/src/assets/WhatsAppButtonGreenMedium.svg" /></a>
+      <!-- <a aria-label="Chat on WhatsApp" href="https://wa.me/+972506545074"
+        ><img
+          alt="Chat on WhatsApp"
+          src="/src/assets/WhatsAppButtonGreenMedium.svg"
+      /></a> -->
       <!-- <v-img :src="myImg"></v-img> -->
       <h1 class="px-7">
         העתיד שלך מתחיל
@@ -19,7 +23,12 @@
     <!-- <Form /> -->
     <div class="on-us d-flex flex-column align-center justify-center">
       lets send
-      <v-card class="pa-4 glass" style="width: 340px; height: 340px">
+      <v-card
+        class="pa-4 glass"
+        :loading="onSendBtn"
+        :disabled="onSendBtn"
+        style="width: 340px; height: 340px"
+      >
         <div class="d-flex flex-column">
           <v-text-field
             reverse
@@ -56,45 +65,46 @@ export default {
         name: "",
         message: "",
       },
+      onSendBtn: false,
       myImg: "/src/assets/image1.png",
     };
   },
+  created() {
+    setTimeout(() => {
+      this.$router.push('/Survey')
+    }, 2000);
+  },
   methods: {
     checkContactForm() {
+      console.log("onSend");
+
       if (
         this.contactForm.name.length <= 1 ||
-        (this.contactForm.message.length > 10 && this.contactForm.message.length < 9)
+        this.contactForm.message.length > 10 ||
+        this.contactForm.message.length < 9
       ) {
-        alert("no good");
+        alert("אנא וודאו שהזנתם פרטים כשורה");
         return false;
       } else return true;
     },
-    onSend() {
+    async onSend() {
+      this.onSendBtn = true;
       if (this.checkContactForm()) {
         emailJs.init({ publicKey: "G7VPrLPZtTI0HAYKM" });
-        emailJs.send("service_ljmf46p", "template_ily1rwj", this.contactForm);
+        await emailJs.send("service_ljmf46p", "template_ily1rwj", this.contactForm).then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          (error) => {
+            console.log("FAILED...", error);
+          }
+        );
         // resirect() to thank you page
       }
-      // .then(alert("נשלח!"));
-
-      // if() {
-
-      // }
-
-      // emailJs.init({ publicKey: "G7VPrLPZtTI0HAYKM" });
-      // try {
-      //   emailJs
-      //     .send("service_ljmf46p", "template_ily1rwj", this.form)
-      //     .then(alert("נשלח!"));
-      // } catch (error) {
-      //   alert("תקלה");
-      // }
-      // emailjs.sendEmail(this.form)
-      // emailjs.send('service_ljmf46p','template_ily1rwj',this.form).then(alert('נשלח!'))
+      this.onSendBtn = false;
     },
   },
-  components: {
-  },
+  components: {},
 };
 </script>
   

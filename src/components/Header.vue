@@ -22,7 +22,7 @@
 </template>
 
 <script>
-// import asd from '@/assets/logohi.png'
+// import asd from '/public/favicon.ico'
 
 export default {
   data() {
