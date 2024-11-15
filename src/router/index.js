@@ -13,7 +13,7 @@ const router = createRouter({
         },
         {   
             path: '/Survey',
-            path: '/home-finance/Survey',
+            // path: '/home-finance/Survey',
             name: 'Survey',
             component: Survey
         }
