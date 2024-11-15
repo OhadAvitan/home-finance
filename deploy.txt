@@ -5,3 +5,10 @@ git add dist -f
 git commit -m "/SOME/"
 
 git subtree push --prefix dist origin gh-pages
+
+
+
+/////////////////
+
+// before build 
+git push origin --delete gh-pages
