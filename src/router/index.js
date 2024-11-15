@@ -6,11 +6,14 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {   path: '/home-finance/',
+        {   
+            path: '/',
             name: 'Home',
             component: Home
         },
-        {   path: '/home-finance/Survey',
+        {   
+            path: '/Survey',
+            path: '/home-finance/Survey',
             name: 'Survey',
             component: Survey
         }
