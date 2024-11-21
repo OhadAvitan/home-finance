@@ -90,7 +90,8 @@ export default {
         message: "",
       },
       onSendBtn: false,
-      bgImg: "/src/assets/image1.png",
+      bgImg: "/images/image1.png" //IMAGE
+      // bgImg: "/src/assets/image1.png",
     };
   },
   created() {

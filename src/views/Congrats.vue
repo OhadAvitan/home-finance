@@ -22,7 +22,8 @@
   export default {
     data() {
         return {
-            logoSrc: '/src/assets/biglogo.svg',
+            logoSrc: '/images/biglogo.svg', //IMAGE
+            // logoSrc: '/src/assets/biglogo.svg',
         }
     },
     created() {
