@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="survey d-flex flex-column pa-8">
     <div class="header-space"></div>
     <div>
-      <h2>gagagagagagaga</h2>
+      <h2>כמה שאלות לבירור הזכאות</h2>
     </div>
-    <SurveyCmp />
+    <SurveyCmp class="d-flex flex-column mx-auto mt-12 mb-12"/>
   </div>
 </template>
 
@@ -21,8 +21,12 @@ export default {
 </script>
 
 <style lang="scss">
-.header-space {
+.survey {
+
+
+  .header-space {
     width: 100vw;
     height: 70px;
   }
+}
 </style>

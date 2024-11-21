@@ -17,7 +17,7 @@ export default {};
   width: 100%;
   height: 260px;
   /* bottom: 0;
-        position: absolute; */
+  position: absolute; */
   background: #213c34;
   background: linear-gradient(45deg, #363636, #242424);
 }

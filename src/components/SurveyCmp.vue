@@ -1,8 +1,7 @@
 <template>
   <div class="survey-cmp">
     <!-- <h2>form</h2> -->
-    <h3>כמה שאלות</h3>
-    <v-card elevation="4">
+    <v-card elevation="2">
       <!-- <v-carousel hide-delimiters :show-arrows="false">
         <template v-slot:prev="{ props }">
           <v-btn color="success" variant="elevated" @click="props.onClick"
@@ -24,30 +23,20 @@
           cover
         ></v-carousel-item>
       </v-carousel> -->
-      <v-carousel
-        v-model="model"
-        height="400"
-        progform="#8186e8"
-        hide-delimiters
-        :show-arrows="false"
-        style="direction: rtl; transform: matrix(-1, 0, 0, 1, 0, 0)"
-      >
+      <v-carousel v-model="model" height="400" progress="#8186e8" hide-delimiters :show-arrows="false" style="direction: rtl; transform: matrix(-1, 0, 0, 1, 0, 0)" >
         <div>
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-sheet height="100%" style="transform: matrix(-1, 0, 0, 1, 0, 0)">
               <!-- <div class="d-flex fill-height justify-center align-center flex-column"> -->
               <!-- justify-center align-center -->
-              <div class="d-flex flex-column py-6 px-4">
-                <div><h2>{{ slide.question }}</h2></div>
+              <div class="d-flex flex-column pa-8">
+                <div>
+                  <h4>{{ slide.orrr }}</h4>
+                  <h4>{{ slide.question }}</h4>
+                </div>
                 <div class="d-flex flex-column">
-                  <v-radio-group v-model="survey[i]" style="direction: rtl">
-                    <v-radio
-                      class="py-2"
-                      v-for="n in slide.options.length"
-                      :value="slide.options[n - 1]"
-                      :label="slide.options[n - 1]"
-                      :key="n"
-                    ></v-radio>
+                  <v-radio-group slide.orrr v-model="survey[i]" style="direction: rtl">
+                    <v-radio v-for="n in slide.options.length" :value="slide.options[n - 1]" :label="slide.options[n - 1]" :key="n" ripple reverse color="#8186e8" class="py-2"></v-radio>
                   </v-radio-group>
                 </div>
               </div>
@@ -56,12 +45,12 @@
         </div>
       </v-carousel>
     </v-card>
-    <div class="d-flex justify-space-around align-center py-4">
-      <v-btn variant="text" @click="model = Math.min(model + 1, slides.length-1)">המשך</v-btn>
-      <v-btn variant="text" @click="model = Math.max(model - 1, 0)">הקודם</v-btn>
+    <div class="d-flex justify-space-around align-center py-6 mt-2">
+      <v-btn variant="tonal" style="width: min(20vw, 170px);" @click="model = Math.min(model + 1, slides.length - 1)" rounded="lg" color="success">המשך</v-btn >
+      <v-btn variant="tonal" style="width: min(20vw, 170px);" @click="model = Math.max(model - 1, 0)" rounded="lg">הקודם</v-btn >
       <!-- {{ model }} -->
     </div>
-    <v-btn @click="print()">PRINT</v-btn>
+    <!-- <v-btn @click="print()">PRINT</v-btn> -->
   </div>
 </template>
 
@@ -69,52 +58,74 @@
 export default {
   data() {
     return {
-      lili: '#d5d0ff',
+      lili: "#d5d0ff",
       // lili: 'linear-gradient(90deg, #d5d0ff, #8186e8)',
       model: 0,
       slides: [
         {
-          question: "מה סכום ההלוואה שאתם צריכים?",
-          options: ["עד 20 אלף שח", "עד 100 אלף שח", "עד 500 אלף שח"],
-        },
-        {
           question: "יש בבעלותכם נכס?",
           options: ["כן", "לא"],
+          orrr: 'inline'
         },
         {
-          question: "q3",
-          options: ["זסבזבזסבז", "עגגכעגכעגכעגכ", "כרכרכרכרכ"],
+          question: "מה שווי הנכס שלכם?",
+          options: ['עד מיליון ש"ח', 'עד 2 מיליון ש"ח', 'עד 3 מיליון ש"ח'],
+          orrr: ''
         },
+        {
+          question: "מה גובה ההלוואה שהינכם מעוניינים לקחת?",
+          options: ["עד 500 אלף שח", "עד מיליון שח", "מעל למיליון שח"],
+          orrr: ''
+        },
+        {
+          question: "האם יש משכנתא על הנכס?",
+          options: ["כן", "לא"],
+          orrr: 'inline'
+        },
+        {
+          question: "מתי נוח לכם שנחוזר עם תוצאות הזכאות?",
+          options: ["עד 500 אלף שח", "עד מיליון שח", "מעל למיליון שח"],
+          orrr: 'inline'
+        },
+        // NOW CONTACT
       ],
       survey: {},
     };
   },
   methods: {
-    print(){
+    print() {
       console.log(this.survey);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .survey-cmp {
-  display: block;
-  width: 92%;
+  // display: block;
+  // width: 100%;
+  width: min(700px, 100%);
+  .v-carousel {
+    h4 {
+      font-size: 30px;
+      font-weight: 400;
+    }
+  }
+
   .v-card {
     padding: 0;
     border-radius: 12px;
 
-    .pre-btn {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-    }
-    .next-btn {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-    }
+    // .pre-btn {
+    //   position: absolute;
+    //   bottom: 20px;
+    //   left: 20px;
+    // }
+    // .next-btn {
+    //   position: absolute;
+    //   bottom: 20px;
+    //   right: 20px;
+    // }
   }
 }
 </style>

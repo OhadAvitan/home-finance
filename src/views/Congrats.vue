@@ -24,6 +24,11 @@
         return {
             logoSrc: '/src/assets/biglogo.svg',
         }
+    },
+    created() {
+      setTimeout(() => {
+        this.$router.push('/')
+      }, 10000);
     }
   }
   </script>

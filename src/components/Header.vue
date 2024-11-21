@@ -1,6 +1,6 @@
 <template>
   <div class="header d-flex flex-column justify-center align-end menu-out">
-    <div class="container pe-3 d-flex justify-center align-center">
+    <div class="container-header pe-3 d-flex justify-center align-center">
       <div
         class="d-flex flex-column px-2"
         style="
@@ -77,7 +77,7 @@ export default {
 
 
 @media (width >= 700px) {
-  .container {
+  .container-header {
     padding-inline-end: 28px !important;
   }
 }
