@@ -27,6 +27,7 @@
         }
     },
     created() {
+      window.scrollTo(0, 0);
       setTimeout(() => {
         this.$router.push('/')
       }, 10000);
@@ -36,7 +37,7 @@
   
   <style lang="scss" scoped>
   .header-space {
-      width: 100vw;
+      width: 90vw;
       height: 70px;
     }
 

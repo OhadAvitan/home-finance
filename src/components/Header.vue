@@ -1,6 +1,6 @@
 <template>
   <div class="header d-flex flex-column justify-center align-end menu-out">
-    <div class="container-header pe-3 d-flex justify-center align-center">
+    <div @click="$router.push('/')" class="container-header pe-3 d-flex justify-center align-center">
       <div
         class="d-flex flex-column px-2"
         style="
@@ -51,7 +51,9 @@ export default {
   background-color: #fdfdff;
   font-family: Fredoka, sans-serif;
   //   background-color: #414141;
-
+  .container-header:hover {
+    cursor: pointer;
+  }
   .logo {
     display: inline-flex;
     width: 44px;
@@ -59,20 +61,22 @@ export default {
   }
 }
 
-@keyframes menuOut {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-70px);
-  }
-}
+// @keyframes menuOut {
+//   from {
+//     transform: translateY(-170px);
+//   }
+//   to {
+//     transform: translateY(0px);
+//   }
+// }
 
 .menu-out {
-  animation: menuOut linear;
-  animation-timeline: view();
+  // animation: menuOut linear;
+  // animation: menuOut 1s infinite;
+  // animation-timeline: view();
   // animation-range: entry 0%;
-  animation-range: entry 100%;
+  // animation-range-start: 0;
+  // animation-range-end: 110%;
 }
 
 
