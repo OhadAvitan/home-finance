@@ -16,6 +16,8 @@ import Home from './views/Home.vue';
 </script>
 
 <style lang="scss">
+$clr1: #93b3ff;
+
 .v-main {
   font-family: "Fredoka", sans-serif;
   text-align: right;

@@ -27,7 +27,9 @@
 export default {
   data() {
     return {
-      imgSrc: "favicon.ico",
+      // imgSrc: "favicon.ico",
+      imgSrc: "images/biglogo.svg",
+      // imgSrc: "/public/images/",
       // imgSrc1: "/favicon.ico",
       //   imgSrc: "/public/favicon.ico",
     };

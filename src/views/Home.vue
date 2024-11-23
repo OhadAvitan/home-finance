@@ -11,7 +11,7 @@
       <!-- <v-img :src="bgImg"></v-img> -->
       <h1 class="px-7" style="color: #fff">
         העתיד שלך מתחיל
-        <span style="color: #655081; text-shadow: #d6d6d6cc 0px 0px 15px"
+        <span style="color: #7366c5; text-shadow: #d6d6d6cc 0px 0px 15px"
           >בהשקעה</span
         >
         של היום
@@ -67,12 +67,12 @@
       <div class="pb-8" style="font-size: 34px">קבל ייעוץ עכשיו - בחינם</div>
       <v-card class="pa-4 glass" :loading="onSendBtn" :disabled="onSendBtn" style="width: 340px; z-index: 2;">
         <div class="d-flex flex-column">
-          <v-text-field reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.name" color="#73599e" label="שם" variant="outlined" ></v-text-field>
-          <v-text-field reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.phone" color="#73599e" label="טלפון" variant="outlined" ></v-text-field>
+          <v-text-field reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.name" color="#97b5ff" label="שם" variant="outlined" ></v-text-field>
+          <v-text-field reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.phone" color="#97b5ff" label="טלפון" variant="outlined" ></v-text-field>
         </div>
         <div class="d-flex flex-column align-center">
-          <v-btn size="large" :disabled="!thereIsProperty" variant="tonal" color="#73599e" @click="onSend" >שלח פרטים</v-btn >
-          <v-checkbox v-model="thereIsProperty" label="מאשר/ת שיש ברשותי דירה/נכס" ></v-checkbox>
+          <v-btn size="large" :disabled="!thereIsProperty" variant="tonal" color="#93b3ff" @click="onSend" >שלח פרטים</v-btn >
+          <v-checkbox color="#93b3ff" v-model="thereIsProperty" label="מאשר/ת שיש ברשותי דירה/נכס" ></v-checkbox>
         </div>
       </v-card>
       <v-img class="contact-img" src="/images/contact.svg"></v-img>
@@ -212,7 +212,9 @@ export default {
     // background-color: #126f55;
     // background: linear-gradient(55deg, #0f4334, #61d6b5);
     // background: linear-gradient(37deg, #3b1d6c, #aed4ff);
-    background: linear-gradient(45deg, #5f599e, #58308f80);
+    // background: linear-gradient(45deg, #5f599e, #58308f80);
+    background: linear-gradient(45deg, #93b3ff, #58308f80);
+
     .contact-img {
       animation: myName 2s linear;
       position: absolute;
@@ -269,7 +271,19 @@ export default {
         background-color: #ffffff8b;
         border: #ffffff54 solid 3px;
         border-radius: 12px;
+        animation: fade-in linear;
+        animation-timeline: view(93vh -100px);
+        // animation: fade-in linear;
+        // animation-timeline: view();
+        // animation-range-start: cover;
+        // animation-range-end: 200px;
+        
       }
+    }
+    @keyframes fade-in {
+      from {scale: 0.7; opacity: 0;}
+      to {scale: 1; opacity: 1;}
+
     }
 
     .glass {
