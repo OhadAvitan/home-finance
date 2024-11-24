@@ -15,6 +15,7 @@ export default defineConfig({
     Vue({
       template: { transformAssetUrls }
     }),
+    
     // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
     Vuetify(),
     Components(),
@@ -27,6 +28,13 @@ export default defineConfig({
       },
     }),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/variables.scss";`, // Path to your SCSS variables file
+      },
+    },
+  },
   define: { 'process.env': {} },
   resolve: {
     alias: {

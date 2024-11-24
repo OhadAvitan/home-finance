@@ -11,12 +11,12 @@
       <!-- <v-img :src="bgImg"></v-img> -->
       <h1 class="px-7" style="color: #fff">
         העתיד שלך מתחיל
-        <span style="color: #7366c5; text-shadow: #d6d6d6cc 0px 0px 15px"
+        <span style="color: #93b3ff; text-shadow: #0000004d 0px 0px 15px"
           >בהשקעה</span
         >
         של היום
       </h1>
-      <h2 class="pa-12 mx-auto" style="text-align: center">
+      <h2 class="pa-9 my-8 mx-auto" style="text-align: center">
         קבלו את המשכנתא שמתאימה לכם בדיוק<br />
         ליווי מקצועי, שקיפות מלאה וביטחון, כל הדרך לבית שלכם
       </h2>
@@ -28,7 +28,7 @@
       style="font-size: 34px"
     >
       <div style="text-align: start; font-weight: 700">? יש לכם דירה/נכס</div>
-      <div>אתם זכאים להלוואה בריבית הנמוכה ביותר בשוק</div>
+      <div class="subtext">אתם זכאים להלוואה בריבית הנמוכה ביותר בשוק</div>
     </div>
     <div class="on-us">
       <h2 class="">הקווים המנחים אצלנו בהום משכנתאות</h2>
@@ -65,7 +65,7 @@
     </div>
     <div id="contacts" class="contact d-flex flex-column align-center justify-center">
       <div class="pb-8" style="font-size: 34px">קבל ייעוץ עכשיו - בחינם</div>
-      <v-card class="pa-4 glass" :loading="onSendBtn" :disabled="onSendBtn" style="width: 340px; z-index: 2;">
+      <v-card class="pa-4 mx-2 card-form" :loading="onSendBtn" :disabled="onSendBtn">
         <div class="d-flex flex-column">
           <v-text-field reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.name" color="#97b5ff" label="שם" variant="outlined" ></v-text-field>
           <v-text-field reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.phone" color="#97b5ff" label="טלפון" variant="outlined" ></v-text-field>
@@ -77,7 +77,6 @@
       </v-card>
       <v-img class="contact-img" src="/images/contact.svg"></v-img>
     </div>
-    <!-- GGGGGGGGGGGGGGGGGGGG -->
   </div>
 </template>
   
@@ -94,7 +93,7 @@ export default {
       },
       onSendBtn: false,
       thereIsProperty: false,
-      bgImg: "/images/heroBg2.png", //IMAGE
+      bgImg: "/images/heroBg5.png", //IMAGE
       // bgImg: "/images/image1.png" //IMAGE
       // bgImg: "/src/assets/image1.png",
     };
@@ -161,8 +160,9 @@ export default {
   
 <style lang="scss">
 .home {
+  // background-color: $clr1;
   // scroll-behavior: smooth;
-
+  text-align: center;
   .header-space {
     width: 90vw;
     height: 70px;
@@ -177,6 +177,7 @@ export default {
     box-sizing: border-box;
     width: 100vw;
     height: 470px;
+    padding-top: 120px;
     // background-image: url('@/assets/image1.png');
     // background-attachment: fixed;
     background-position: center;
@@ -190,7 +191,7 @@ export default {
 
     h1 {
       text-align: center;
-      margin-top: 120px;
+      // margin-top: 120px;
       // font-size: 10vw;
       font-size: 48px;
       color: rgb(250, 250, 250);
@@ -218,19 +219,23 @@ export default {
     .contact-img {
       animation: myName 2s linear;
       position: absolute;
-      width: 450px;
-      right: -20px;
-      bottom: 232px;
+      width: 390px;
+      right: 1px;
+      bottom: 255px;
     }
-  }
-  .to-survey {
-    color: #73599e;
   }
   .section2 {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    color: #73599e;
+    color: $clr3;
+    .subtext {
+      color: $clr2;
+    }
+  }
+  .to-survey {
+    // color: #73599e;
+    color: $clr3;
   }
   .on-us {
     display: flex;
@@ -243,13 +248,13 @@ export default {
     // background-color: #126f55;
     // background: linear-gradient(55deg, #0f4334, #61d6b5);
     // background: linear-gradient(37deg, #3b1d6c, #aed4ff);
-    background: linear-gradient(313deg, #73599e, #ffffff);
+    background: linear-gradient(313deg, #73599e, $clr2);
     // background:
     //       linear-gradient(55deg, #0f4334, #61d6b5),
     //       url(https://grainy-gradients.vercel.app/noise.svg);
 
     .container {
-      padding: 20px;
+      padding: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -265,7 +270,7 @@ export default {
         margin: 12px;
         flex-grow: 1;
         // width: 350px;
-        min-width: 400px;
+        min-width: min(400px, 95%);
         max-width: 500px;
         height: 220px;
         background-color: #ffffff8b;
@@ -286,7 +291,9 @@ export default {
 
     }
 
-    .glass {
+    .card-form {
+      width: min(400px, 95vw) !important;
+      z-index: 2;
       background: rgba(255, 255, 255, 0.4);
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       backdrop-filter: blur(3px);
@@ -309,11 +316,41 @@ export default {
 @media (width <= 900px) {
   .contact {
     // height: 800px !important;
-    height: 90vh !important;
+    height: 82vh !important;
     justify-content: start !important;
     // padding-top: 100px;
-    padding-top: 12vh;
+    padding-top: 10vh;
   }
+}
+
+@media (width <= 700px) {
+  .hero {
+    // height: 800px !important;
+    height: 80vh !important;
+    // justify-content: start !important;
+    // padding-top: 100px;
+    padding-top: 80px !important;
+  }
+}
+
+@media (width <= 450px) {
+  .home {
+    .on-us .container .service {
+      width: 90%;
+      // padding-top: 80px !important;
+    // height: 800px !important;
+    // height: 80vh !important;
+    // justify-content: start !important;
+    // padding-top: 100px;
+    }
+    .contact {
+      padding-top: 30px !important;
+      .contact-img {
+        width: 360px;
+      }
+    }
+  }
+  
 }
 
 @media (width >= 700px) {

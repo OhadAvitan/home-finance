@@ -42,7 +42,7 @@ export default {
   box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   width: 100vw;
   height: 70px;
   color: white;

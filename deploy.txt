@@ -12,3 +12,7 @@ git subtree push --prefix dist origin gh-pages
 
 // before build 
 git push origin --delete gh-pages
+
+
+
+background-position: center -30px;

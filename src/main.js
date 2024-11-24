@@ -13,6 +13,7 @@ import { registerPlugins } from '/src/plugins'
 // import App from './App.vue'
 import App from '@/App.vue'
 import router from '@/router/index.js'
+// import style from '@/router/vari.scss'
 
 // Composables
 import { createApp } from 'vue'
