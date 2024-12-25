@@ -65,10 +65,10 @@
     </div>
     <div id="contacts" class="contact d-flex flex-column align-center justify-center">
       <div class="pb-8" style="font-size: 34px">קבל ייעוץ עכשיו - בחינם</div>
-      <v-card class="pa-4 mx-2 card-form" :loading="onSendBtn" :disabled="onSendBtn">
+      <v-card :style="this.formFocus ? 'zooming' : ''" class="pa-4 mx-2 card-form" :loading="onSendBtn" :disabled="onSendBtn">
         <div class="d-flex flex-column">
-          <v-text-field reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.name" color="#97b5ff" label="שם" variant="outlined" ></v-text-field>
-          <v-text-field reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.phone" color="#97b5ff" label="טלפון" variant="outlined" ></v-text-field>
+          <v-text-field :focused="Med()" reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.name" color="#97b5ff" label="שם" variant="outlined" ></v-text-field>
+          <v-text-field :focused="Med()" reverse bg-color="rgba(255, 255, 255, 0.8)" v-model="contactForm.phone" color="#97b5ff" label="טלפון" variant="outlined" ></v-text-field>
         </div>
         <div class="d-flex flex-column align-center">
           <v-btn size="large" :disabled="!thereIsProperty" variant="tonal" color="#93b3ff" @click="onSend" >שלח פרטים</v-btn >
