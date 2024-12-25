@@ -86,6 +86,7 @@ import emailJs from "@emailjs/browser";
 export default {
   data() {
     return {
+      formFocus: false,
       // bgImg: "@/assets/image1.png",
       contactForm: {
         name: '',
@@ -106,6 +107,9 @@ export default {
     }
   },
   methods: {
+    Med() {
+      this.formFocus = true
+    },
     checkContactForm() {
       console.log("onSend");
       if ( this.contactForm.name.length > 1 && this.contactForm.phone.length > 8 && this.contactForm.phone.length < 11 ) {
@@ -160,6 +164,11 @@ export default {
   
 <style lang="scss">
 .home {
+  .zooming {
+    zoom: 1.2 !important;
+    position: absolute !important;
+    margin-top: 50px !important;
+  }
   // background-color: $clr1;
   // scroll-behavior: smooth;
   text-align: center;
@@ -248,7 +257,10 @@ export default {
     // background-color: #126f55;
     // background: linear-gradient(55deg, #0f4334, #61d6b5);
     // background: linear-gradient(37deg, #3b1d6c, #aed4ff);
-    background: linear-gradient(313deg, #73599e, $clr2);
+    // background: linear-gradient(313deg, #73599e, $clr2);
+    // background: linear-gradient(313deg, #806ea0b8, #b8cdff);
+    background: linear-gradient(313deg, #73599e85, #93b3ffb3);
+
     // background:
     //       linear-gradient(55deg, #0f4334, #61d6b5),
     //       url(https://grainy-gradients.vercel.app/noise.svg);
